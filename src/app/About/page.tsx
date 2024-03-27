@@ -29,6 +29,7 @@ export default function About() {
 					automation, reflecting his passion for leveraging technology to solve
 					complex challenges.
 				</p>
+
 				<div className={styles.additionalLinks}>
 					<ExternalLink href="https://github.com/zhaungsont/hide-teams-overlay">
 						GitHub
@@ -45,6 +46,10 @@ export default function About() {
 					</ExternalLink>
 					<br />
 				</div>
+				<p className={styles.bio}>
+					For business inquiries, please reach out to Michael at{' '}
+					<code>zhsont[at]gmail.com</code>
+				</p>
 			</SubPage>
 		</section>
 	);
