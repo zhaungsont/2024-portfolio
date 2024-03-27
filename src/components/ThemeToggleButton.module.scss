@@ -1,0 +1,20 @@
+.themeButton {
+	background: none;
+	border: 2px solid var(--text-color);
+	border-radius: 50%;
+	width: 2rem;
+	height: 2rem;
+	cursor: pointer;
+	opacity: 0.3;
+	transition: 0.3s;
+
+	svg {
+		scale: 1.5;
+		transform: translateY(1px);
+	}
+
+	&:hover {
+		opacity: 0.6;
+		scale: 1.1;
+	}
+}
