@@ -4,6 +4,8 @@ import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
 import styles from './ThemeToggleButton.module.scss';
 import { useRouter } from 'next/navigation';
 
+let cycles = 1;
+
 export default function ThemeToggleButton() {
 	const [isDarkTheme, setIsDarkTheme] = useState(false);
 	const [clickedTimes, setClickedTimes] = useState(0);
@@ -17,8 +19,11 @@ export default function ThemeToggleButton() {
 		document.documentElement.classList.toggle('light-theme');
 	};
 
-	if (clickedTimes === 10) {
-		router.push('/dashboard', { scroll: false });
+	if (clickedTimes === 10 * cycles) {
+		alert('YEET');
+		router.push('/yeet', { scroll: false });
+		setClickedTimes(0);
+		cycles++;
 	}
 	return (
 		<button
