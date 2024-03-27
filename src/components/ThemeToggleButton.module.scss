@@ -1,4 +1,8 @@
 .themeButton {
+	z-index: 9999;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
 	background: none;
 	border: 2px solid var(--text-color);
 	border-radius: 50%;
@@ -7,6 +11,7 @@
 	cursor: pointer;
 	opacity: 0.3;
 	transition: 0.3s;
+	color: var(--text-color);
 
 	svg {
 		scale: 1.5;

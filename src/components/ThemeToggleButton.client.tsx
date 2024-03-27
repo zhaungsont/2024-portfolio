@@ -7,6 +7,7 @@ export default function ThemeToggleButton() {
 	const [isDarkTheme, setIsDarkTheme] = useState(false);
 	const toggleTheme = () => {
 		setIsDarkTheme(!isDarkTheme);
+
 		document.body.classList.toggle('dark-theme');
 	};
 

@@ -30,9 +30,8 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${inter.className} body`}>
-				<div className={styles.themeToggle}>
-					<ThemeToggleButton />
-				</div>
+				<ThemeToggleButton />
+
 				{children}
 				<main className={`${styles.main} homepage`}>
 					<div className={styles.left}>

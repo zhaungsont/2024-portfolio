@@ -47,6 +47,7 @@
 	.right {
 		display: flex;
 		flex-direction: column;
+		align-items: flex-start;
 		gap: 1rem;
 
 		a {
@@ -58,7 +59,7 @@
 				content: '';
 				width: 0.5rem;
 				height: 1px;
-				background: var(--background-color);
+				background: var(--text-color);
 				transition: width 0.3s;
 				bottom: 0;
 				position: absolute;

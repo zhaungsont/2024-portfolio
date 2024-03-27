@@ -16,8 +16,8 @@
 	/* Add more variables as needed */
 }
 
-html {
-	background: #1e1e1f;
+body {
+	background: var(--background-color);
 }
 
 $blur_duration: 0.3s;
