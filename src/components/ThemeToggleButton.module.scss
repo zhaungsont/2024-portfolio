@@ -1,6 +1,5 @@
 .themeButton {
 	z-index: 9999;
-	position: absolute;
 	top: 2rem;
 	right: 2rem;
 	background: none;
@@ -26,6 +25,13 @@
 
 @media (max-width: 768px) {
 	.themeButton {
+		position: absolute;
 		top: 4rem;
+	}
+}
+
+@media (min-width: 769px) {
+	.themeButton {
+		position: fixed;
 	}
 }

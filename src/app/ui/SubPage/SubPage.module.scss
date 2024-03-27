@@ -3,7 +3,8 @@
 	height: 100svh;
 	position: absolute;
 	z-index: 1;
-	padding: 2rem;
+	padding: 4rem 2rem;
+	transition: 0.3s;
 
 	.goBack {
 		font-size: 2rem;
@@ -18,20 +19,17 @@
 			}
 		}
 	}
-
-	.title {
-		margin-top: 2rem;
-	}
 }
 
 @media (max-width: 768px) {
-	.subPage {
-		padding: 4rem 2rem;
-	}
 }
 
 @media (min-width: 769px) {
 	.subPage {
-		// background: rgba(128, 0, 128, 0.273);
+		display: flex;
+		justify-content: center;
+		.wrapper {
+			width: 50rem;
+		}
 	}
 }

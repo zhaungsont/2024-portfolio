@@ -8,10 +8,12 @@ import { BsArrowLeftCircle } from 'react-icons/bs';
 export default function Subpage({ children }: { children: React.ReactNode }) {
 	return (
 		<div className={`${styles.subPage} subPage`}>
-			<Link className={styles.goBack} href="/">
-				<BsArrowLeftCircle />
-			</Link>
-			{children}
+			<div className={styles.wrapper}>
+				<Link className={styles.goBack} href="/">
+					<BsArrowLeftCircle />
+				</Link>
+				{children}
+			</div>
 		</div>
 	);
 }
