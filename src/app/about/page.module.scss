@@ -9,9 +9,11 @@
 
 	.bio {
 		font-weight: 300;
-		& + .bio {
-			margin-top: 1rem;
-		}
+	}
+
+	.bio,
+	.additionalLinks {
+		margin-bottom: 1rem;
 	}
 
 	.additionalLinks {
