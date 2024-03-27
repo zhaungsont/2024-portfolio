@@ -41,9 +41,11 @@ $blur_amount: 20px;
 
 .body:has(.subPage) .homepage {
 	animation: blurIn $blur_duration forwards;
+	position: fixed;
 }
 .body:not(:has(.subPage)) .homepage {
 	animation: blurOut $blur_duration forwards;
+	position: absolute;
 }
 
 @keyframes blurIn {
