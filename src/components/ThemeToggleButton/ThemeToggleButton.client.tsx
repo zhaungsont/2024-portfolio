@@ -8,8 +8,8 @@ export default function ThemeToggleButton() {
 	const toggleTheme = () => {
 		setIsDarkTheme(!isDarkTheme);
 
-		document.body.classList.toggle('dark-theme');
-		document.documentElement.classList.toggle('dark-theme');
+		document.body.classList.toggle('light-theme');
+		document.documentElement.classList.toggle('light-theme');
 	};
 
 	return (
@@ -18,7 +18,7 @@ export default function ThemeToggleButton() {
 			onClick={toggleTheme}
 			aria-label={isDarkTheme ? 'Switch to light mode' : 'Switch to dark mode'}
 		>
-			{isDarkTheme ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
+			{isDarkTheme ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
 		</button>
 	);
 }
