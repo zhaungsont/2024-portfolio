@@ -5,5 +5,33 @@
 }
 
 html {
-	background: #000;
+	background: #1e1e1f;
+}
+
+$blur_duration: 0.3s;
+$blur_amount: 20px;
+
+.body:has(.subpage) .homepage {
+	animation: blurIn $blur_duration forwards;
+}
+.body:not(:has(.subpage)) .homepage {
+	animation: blurOut $blur_duration forwards;
+}
+
+@keyframes blurIn {
+	from {
+		filter: blur(0px);
+	}
+	to {
+		filter: blur($blur_amount);
+	}
+}
+
+@keyframes blurOut {
+	from {
+		filter: blur($blur_amount);
+	}
+	to {
+		filter: blur(0px);
+	}
 }

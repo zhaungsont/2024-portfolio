@@ -44,6 +44,12 @@
 			&:hover::before {
 				width: 100%;
 			}
+
+			svg {
+				scale: 0.75;
+				// margin-left: 0.25rem;
+				// transform: translateY(2px);
+			}
 		}
 	}
 }
