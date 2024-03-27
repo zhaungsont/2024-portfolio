@@ -20,6 +20,11 @@ body {
 	background: var(--background-color);
 }
 
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--text-color) transparent; /* Scroll thumb and track colors */
+}
+
 $blur_duration: 0.3s;
 $blur_amount: 20px;
 

@@ -9,6 +9,7 @@ export default function ThemeToggleButton() {
 		setIsDarkTheme(!isDarkTheme);
 
 		document.body.classList.toggle('dark-theme');
+		document.documentElement.classList.toggle('dark-theme');
 	};
 
 	return (
