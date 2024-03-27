@@ -3,7 +3,6 @@
 	height: 100svh;
 	background: var(--background-color);
 	color: var(--text-color);
-	overflow: hidden;
 
 	a {
 		text-decoration: none;
@@ -89,6 +88,7 @@
 			align-items: center;
 			font-size: 1.5rem;
 			gap: 2rem;
+			padding-bottom: 4rem;
 		}
 	}
 }

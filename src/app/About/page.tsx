@@ -47,7 +47,7 @@ export default function About() {
 					</ExternalLink>
 					<br />
 					<br />
-					...or add me on{' '}
+					...or add him on{' '}
 					<ExternalLink href="https://github.com/zhaungsont/hide-teams-overlay">
 						Discord
 					</ExternalLink>
@@ -55,7 +55,7 @@ export default function About() {
 				</div>
 				<p className={styles.bio}>
 					For business inquiries, please reach out to Michael at{' '}
-					<code>zhsont[at]gmail.com</code>
+					<code>zhsont[at]gmail.com</code>.
 				</p>
 			</SubPage>
 		</section>
