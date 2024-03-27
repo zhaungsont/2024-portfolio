@@ -25,10 +25,11 @@ export default function About() {
 				</p>
 				<p className={styles.bio}>
 					Michael&apos;s journey into the world of technology began at the age
-					of 13 when he first explored coding through modding for the video game
-					Grand Theft Auto and building static websites. Despite majoring in
-					English literature during university, his fascination with coding led
-					him to pursue a career in software engineering.
+					of 13, when he first explored coding through modding for the video
+					game Grand Theft Auto: San Andreas and building static websites.
+					Despite majoring in English literature during university, his
+					fascination with coding led him to pursue a career in software
+					engineering.
 				</p>
 				<p className={styles.bio}>
 					Now, Michael&apos;s expertise lies in the front-end ecosystem, where
@@ -43,6 +44,9 @@ export default function About() {
 				</p>
 
 				<div className={styles.additionalLinks}>
+					<div className={styles.bio}>
+						Connect with Michael through the following platforms:
+					</div>
 					<ExternalLink href="https://github.com/zhaungsont/hide-teams-overlay">
 						GitHub
 					</ExternalLink>
