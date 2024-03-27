@@ -3,10 +3,5 @@ import styles from './page.module.scss';
 import Link from 'next/link';
 
 export default function Home() {
-	return (
-		<main>
-			home
-			<Link href="/about">About</Link>
-		</main>
-	);
+	return <></>;
 }
