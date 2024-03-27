@@ -65,3 +65,7 @@ $blur_amount: 20px;
 		filter: blur(0px);
 	}
 }
+
+body:has(.page-404) .homepage {
+	display: none;
+}
