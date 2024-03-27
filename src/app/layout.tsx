@@ -34,7 +34,7 @@ export default function RootLayout({
 
 				{children}
 				<main className={`${styles.main} homepage`}>
-					<div className={styles.left}>
+					<div className={styles.personalInfo}>
 						<h1>Michael Chuang</h1>
 						<h3>Software Engineer</h3>
 						<h3>Taipei, Taiwan</h3>
@@ -47,7 +47,7 @@ export default function RootLayout({
 							</a>
 						</div>
 					</div>
-					<div className={`${firaMono.className} ${styles.right}`}>
+					<div className={`${firaMono.className} ${styles.pageLinks}`}>
 						<Link href="/about">About</Link>
 						<Link href="/experience">Experience</Link>
 						<Link href="/resume">Resume</Link>

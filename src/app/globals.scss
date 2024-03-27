@@ -30,6 +30,13 @@ $blur_amount: 20px;
 	animation: blurOut $blur_duration forwards;
 }
 
+.subpage {
+	width: 100%;
+	height: 100svh;
+	position: absolute;
+	z-index: 1;
+}
+
 @keyframes blurIn {
 	from {
 		filter: blur(0px);
