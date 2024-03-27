@@ -5,7 +5,8 @@ import Link from 'next/link';
 import styles from './page.module.scss';
 import { FiExternalLink } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import ThemeToggleButton from '@/components/ThemeToggleButton.client';
+import ThemeToggleButton from '@/components/ThemeToggleButton/ThemeToggleButton.client';
+import ExternalLink from '@/components/ExternalLink/ExternalLink';
 
 const inter = Inter({ subsets: ['latin'] });
 const firaMono = Fira_Mono({
@@ -51,10 +52,7 @@ export default function RootLayout({
 						<Link href="/about">About</Link>
 						<Link href="/experience">Experience</Link>
 						<Link href="/resume">Resume</Link>
-						<a target="_blank" href="https://blog.zhsont.cc/">
-							Blog
-							<FiExternalLink />
-						</a>
+						<ExternalLink href="https://blog.zhsont.cc/">Blog</ExternalLink>
 					</div>
 				</main>
 			</body>

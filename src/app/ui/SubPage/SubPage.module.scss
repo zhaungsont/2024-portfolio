@@ -19,6 +19,14 @@
 			}
 		}
 	}
+
+	&::after {
+		content: '';
+		text-align: center;
+		display: block;
+		height: 3rem;
+		margin-top: 3rem;
+	}
 }
 
 @media (max-width: 768px) {
