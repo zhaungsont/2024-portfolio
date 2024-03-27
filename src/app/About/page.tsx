@@ -6,11 +6,16 @@ import SubPage from '@/app/ui/SubPage/SubPage';
 import { Inter, Fira_Mono } from 'next/font/google';
 import ExternalLink from '@/components/ExternalLink/ExternalLink';
 
+const firaMono = Fira_Mono({
+	subsets: ['latin'],
+	weight: ['400', '500', '700'],
+});
+
 export default function About() {
 	return (
 		<section className={styles.about}>
 			<SubPage>
-				<h1 className={styles.title}>About</h1>
+				<h1 className={`${styles.title} ${firaMono.className}`}>About</h1>
 				<p className={styles.bio}>
 					<strong>Michael Chuang</strong> is a dedicated software engineer based
 					in Taipei, Taiwan, with a keen focus on technical excellence and best
