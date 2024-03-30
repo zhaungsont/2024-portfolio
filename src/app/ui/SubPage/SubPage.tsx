@@ -14,14 +14,16 @@ const firaMono = Fira_Mono({
 export default function SubPage({
 	children,
 	title,
+	backPath,
 }: {
 	children: React.ReactNode;
 	title?: string;
+	backPath?: string;
 }) {
 	return (
 		<div className={`${styles.subPage} subPage`}>
 			<div className={styles.wrapper}>
-				<Link className={styles.goBack} href="/">
+				<Link className={styles.goBack} href={backPath ?? ''}>
 					<BsArrowLeftCircle />
 				</Link>
 				{title && (

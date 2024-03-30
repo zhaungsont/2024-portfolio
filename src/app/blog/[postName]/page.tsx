@@ -11,7 +11,6 @@ export default async function page({
 	params: { postName: string };
 }) {
 	const { postName } = params;
-	console.log('return params', params);
 	const response = await fetch(
 		`https://api.github.com/repos/${repoName}/contents/${postsFolder}/${postName}.md`
 	);
@@ -19,10 +18,11 @@ export default async function page({
 	const fileContent = await fetch(file.download_url);
 	const fileText = await fileContent.text();
 	const { data: metadata, content } = matter(fileText);
-	console.log('metadata', metadata);
-	console.log('content', content);
+
+	const date = Date();
 	return (
-		<SubPage title={metadata.title}>
+		<SubPage title={metadata.title} backPath="/blog">
+			{date}
 			<div dangerouslySetInnerHTML={{ __html: marked.parse(content) }} />
 		</SubPage>
 	);
