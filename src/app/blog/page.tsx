@@ -4,6 +4,7 @@ import SubPage from '@/app/ui/SubPage/SubPage';
 import { Inter, Fira_Mono } from 'next/font/google';
 import markdownit from 'markdown-it';
 import sanitizeHtml from 'sanitize-html';
+import Link from 'next/link';
 
 interface PostsMetadata {
 	name: string;
@@ -27,9 +28,11 @@ interface PostMetadata {
 	metadata: {
 		title: string;
 		date: Date;
-		description: string;
+		category: string;
 	};
 	preview: string;
+	repoName: string;
+	postsFolder: string;
 }
 const md = markdownit();
 const inter = Inter({ subsets: ['latin'] });
@@ -51,6 +54,7 @@ async function fetchPosts() {
 				const fileResponse = await fetch(file.download_url);
 				const fileContent = await fileResponse.text();
 				const { data: metadata, content } = matter(fileContent);
+				console.log('metadata', metadata);
 				const html = md.render(content);
 				const sanitizedHtml = sanitizeHtml(html, {
 					allowedTags: [], // Remove all tags
@@ -68,6 +72,8 @@ async function fetchPosts() {
 					slug: file.name.replace('.md', ''),
 					metadata,
 					preview: previewText,
+					repoName,
+					postsFolder,
 				} as PostMetadata;
 			}
 		})
@@ -88,14 +94,19 @@ async function fetchPosts() {
 
 export default async function page() {
 	const { posts } = await fetchPosts();
+	console.log('posts', posts);
 
 	return (
 		<SubPage title="Blog">
 			{posts.map((post) => (
 				<div className={inter.className} key={post.slug}>
 					<h2 className={firaMono.className}>{post.metadata.title}</h2>
-					<p>{post.metadata.date.toDateString()}</p>
+					<p>
+						{post.metadata.date.toDateString()}{' '}
+						<code>{post.metadata.category}</code>
+					</p>
 					<div>{post.preview}</div>
+					<Link href={`/blog/${post.slug}`}>Read</Link>
 				</div>
 			))}
 		</SubPage>
