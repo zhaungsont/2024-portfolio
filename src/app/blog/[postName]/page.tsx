@@ -1,27 +1,29 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import { repoName, postsFolder } from '@/models/blogRepo';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import { PostMetadata, PostsMetadata } from '@/models/posts.interface';
-export default async function Post({ post }: { post: PostMetadata }) {
-	if (!post) {
-		return <div>Loading...</div>;
-	}
+import SubPage from '@/app/ui/SubPage/SubPage';
 
-	const { repoName, postsFolder, slug } = post;
+export default async function page({
+	params,
+}: {
+	params: { postName: string };
+}) {
+	const { postName } = params;
+	console.log('return params', params);
 	const response = await fetch(
-		`https://api.github.com/repos/${repoName}/contents/${postsFolder}/${slug}.md`
+		`https://api.github.com/repos/${repoName}/contents/${postsFolder}/${postName}.md`
 	);
 	const file: PostsMetadata = await response.json();
 	const fileContent = await fetch(file.download_url);
 	const fileText = await fileContent.text();
 	const { data: metadata, content } = matter(fileText);
-
+	console.log('metadata', metadata);
+	console.log('content', content);
 	return (
-		<div>
-			<h1>{metadata.title}</h1>
-			<p>{metadata.date.toDateString()}</p>
+		<SubPage title={metadata.title}>
 			<div dangerouslySetInnerHTML={{ __html: marked.parse(content) }} />
-		</div>
+		</SubPage>
 	);
 }

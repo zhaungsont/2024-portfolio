@@ -5,35 +5,9 @@ import { Inter, Fira_Mono } from 'next/font/google';
 import markdownit from 'markdown-it';
 import sanitizeHtml from 'sanitize-html';
 import Link from 'next/link';
+import { PostsMetadata, PostMetadata } from '@/models/posts.interface';
+import { repoName, postsFolder } from '@/models/blogRepo';
 
-interface PostsMetadata {
-	name: string;
-	path: string;
-	sha: string;
-	size: number;
-	url: string;
-	html_url: string;
-	git_url: string;
-	download_url: string;
-	type: string;
-	_links: {
-		self: string;
-		git: string;
-		html: string;
-	};
-}
-
-interface PostMetadata {
-	slug: string;
-	metadata: {
-		title: string;
-		date: Date;
-		category: string;
-	};
-	preview: string;
-	repoName: string;
-	postsFolder: string;
-}
 const md = markdownit();
 const inter = Inter({ subsets: ['latin'] });
 const firaMono = Fira_Mono({
@@ -42,8 +16,6 @@ const firaMono = Fira_Mono({
 });
 
 async function fetchPosts() {
-	const repoName = 'zhaungsont/blog';
-	const postsFolder = 'posts';
 	const response = await fetch(
 		`https://api.github.com/repos/${repoName}/contents/${postsFolder}`
 	);
@@ -54,7 +26,7 @@ async function fetchPosts() {
 				const fileResponse = await fetch(file.download_url);
 				const fileContent = await fileResponse.text();
 				const { data: metadata, content } = matter(fileContent);
-				console.log('metadata', metadata);
+				// console.log('metadata', metadata);
 				const html = md.render(content);
 				const sanitizedHtml = sanitizeHtml(html, {
 					allowedTags: [], // Remove all tags
@@ -94,7 +66,7 @@ async function fetchPosts() {
 
 export default async function page() {
 	const { posts } = await fetchPosts();
-	console.log('posts', posts);
+	// console.log('posts', posts);
 
 	return (
 		<SubPage title="Blog">

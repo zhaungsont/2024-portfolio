@@ -5,8 +5,8 @@ import Link from 'next/link';
 import styles from './page.module.scss';
 import { FiExternalLink } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import ThemeToggleButton from '@/components/ThemeToggleButton/ThemeToggleButton.client';
-import ExternalLink from '@/components/ExternalLink/ExternalLink';
+import ThemeToggleButton from '@/app/components/ThemeToggleButton/ThemeToggleButton.client';
+import ExternalLink from '@/app/components/ExternalLink/ExternalLink';
 
 const inter = Inter({ subsets: ['latin'] });
 const firaMono = Fira_Mono({

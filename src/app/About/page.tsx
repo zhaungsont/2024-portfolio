@@ -4,7 +4,7 @@ import styles from './page.module.scss';
 import Link from 'next/link';
 import SubPage from '@/app/ui/SubPage/SubPage';
 import { Inter, Fira_Mono } from 'next/font/google';
-import ExternalLink from '@/components/ExternalLink/ExternalLink';
+import ExternalLink from '@/app/components/ExternalLink/ExternalLink';
 import en from '@/app/locales/en.json';
 import zh from '@/app/locales/zh.json';
 
