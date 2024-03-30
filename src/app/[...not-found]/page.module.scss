@@ -1,0 +1,20 @@
+.custom404 {
+	width: 100%;
+	z-index: 1;
+	color: var(--text-color);
+
+	.content {
+		text-align: center;
+		h1 {
+			margin: 2rem;
+		}
+
+		.image {
+			margin-bottom: 2rem;
+		}
+
+		a {
+			color: var(--text-color);
+		}
+	}
+}

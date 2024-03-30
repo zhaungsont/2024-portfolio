@@ -4,6 +4,64 @@
 	margin: 0;
 }
 
-html {
-	background: #000;
+:root {
+	--background-color: #1e1e1f;
+	--text-color: #d3d3d3;
+	--code-text-color: #c8c8c8;
+	--code-background-color: #353535;
+	/* Add more variables as needed */
+}
+
+.light-theme {
+	--background-color: #d3d3d3;
+	--text-color: #1e1e1f;
+	--code-text-color: #646464;
+	--code-background-color: #c8c8c8;
+	/* Add more variables as needed */
+}
+
+body {
+	background: var(--background-color);
+}
+
+code {
+	background: var(--code-background-color);
+	color: var(--code-text-color);
+	padding: 0.125rem 0.25rem;
+	border-radius: 0.25rem;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--text-color) transparent; /* Scroll thumb and track colors */
+}
+
+$blur_duration: 0.3s;
+$blur_amount: 20px;
+
+.body:has(.subPage) .homepage {
+	animation: blurIn $blur_duration forwards;
+	position: fixed;
+}
+.body:not(:has(.subPage)) .homepage {
+	animation: blurOut $blur_duration forwards;
+	position: absolute;
+}
+
+@keyframes blurIn {
+	from {
+		filter: blur(0px);
+	}
+	to {
+		filter: blur($blur_amount);
+	}
+}
+
+@keyframes blurOut {
+	from {
+		filter: blur($blur_amount);
+	}
+	to {
+		filter: blur(0px);
+	}
 }

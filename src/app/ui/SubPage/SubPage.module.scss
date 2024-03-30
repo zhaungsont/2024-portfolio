@@ -1,0 +1,52 @@
+.subPage {
+	color: var(--text-color);
+	min-height: 100svh;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	padding: 4rem 2rem;
+	transition: 0.3s;
+
+	.goBack {
+		font-size: 2rem;
+		color: var(--text-color);
+
+		svg {
+			opacity: 0.3;
+			transition: 0.3s;
+			&:hover {
+				opacity: 0.6;
+				scale: 1.1;
+			}
+		}
+	}
+
+	&::after {
+		content: '';
+		text-align: center;
+		display: block;
+		height: 3rem;
+		margin-top: 3rem;
+	}
+
+	.title {
+		color: var(--text-color);
+		margin-top: 2rem;
+		font-size: 2rem;
+		margin-bottom: 3rem;
+		filter: opacity(0.8);
+	}
+}
+
+@media (max-width: 768px) {
+}
+
+@media (min-width: 769px) {
+	.subPage {
+		display: flex;
+		justify-content: center;
+		.wrapper {
+			width: 50rem;
+		}
+	}
+}
