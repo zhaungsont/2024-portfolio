@@ -27,6 +27,14 @@
 		height: 3rem;
 		margin-top: 3rem;
 	}
+
+	.title {
+		color: var(--text-color);
+		margin-top: 2rem;
+		font-size: 2rem;
+		margin-bottom: 3rem;
+		filter: opacity(0.8);
+	}
 }
 
 @media (max-width: 768px) {
