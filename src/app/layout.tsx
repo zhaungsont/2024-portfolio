@@ -7,7 +7,7 @@ import { FiExternalLink } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import ThemeToggleButton from '@/app/components/ThemeToggleButton/ThemeToggleButton.client';
 import ExternalLink from '@/app/components/ExternalLink/ExternalLink';
-
+import BlackCube from '@/app/ui/three-fiber/BlackCube';
 const inter = Inter({ subsets: ['latin'] });
 const firaMono = Fira_Mono({
 	subsets: ['latin'],
@@ -32,7 +32,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${inter.className} body`}>
 				<ThemeToggleButton />
-
+				<BlackCube />
 				{children}
 				<main className={`${styles.main} homepage`}>
 					<div className={styles.personalInfo}>
