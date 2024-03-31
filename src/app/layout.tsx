@@ -49,7 +49,7 @@ export default function RootLayout({
 						</div>
 					</div>
 					<div className={`${firaMono.className} ${styles.pageLinks}`}>
-						<Link href="/About">about</Link>
+						<Link href="/aboutaa">about</Link>
 						<Link href="/experience">Experience</Link>
 						<Link href="/resume">Resume</Link>
 						<Link href="/blog">Blog</Link>
