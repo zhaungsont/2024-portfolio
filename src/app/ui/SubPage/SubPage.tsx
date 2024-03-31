@@ -23,7 +23,7 @@ export default function SubPage({
 	return (
 		<div className={`${styles.subPage} subPage`}>
 			<div className={styles.wrapper}>
-				<Link className={styles.goBack} href={backPath ?? ''}>
+				<Link className={styles.goBack} href={backPath ?? '/'}>
 					<BsArrowLeftCircle />
 				</Link>
 				{title && (

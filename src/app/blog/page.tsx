@@ -7,6 +7,7 @@ import sanitizeHtml from 'sanitize-html';
 import Link from 'next/link';
 import { PostsMetadata, PostMetadata } from '@/models/posts.interface';
 import { repoName, postsFolder } from '@/models/blogRepo';
+import styles from './page.module.scss';
 
 const md = markdownit();
 const inter = Inter({ subsets: ['latin'] });
@@ -20,6 +21,11 @@ async function fetchPosts() {
 		`https://api.github.com/repos/${repoName}/contents/${postsFolder}`
 	);
 	const files: PostsMetadata[] = await response.json();
+	if (!Array.isArray(files)) {
+		console.warn('No posts found:', files);
+		return { posts: [] };
+	}
+
 	const posts = await Promise.all(
 		files.map(async (file) => {
 			if (file.type === 'file' && file.name.endsWith('.md')) {
@@ -35,10 +41,8 @@ async function fetchPosts() {
 
 				// replace all newlines with spaces and trim the text,
 				// and then get the first 100 characters
-				const previewText = sanitizedHtml
-					.replace(/\n/g, ' ')
-					.trim()
-					.substring(0, 100);
+				const previewText =
+					sanitizedHtml.replace(/\n/g, ' ').trim().substring(0, 100) + '...';
 
 				return {
 					slug: file.name.replace('.md', ''),
@@ -68,17 +72,33 @@ export default async function page() {
 	const { posts } = await fetchPosts();
 	// console.log('posts', posts);
 
+	if (!posts.length) {
+		return <SubPage title="Blog">No posts found.</SubPage>;
+	}
+
 	return (
 		<SubPage title="Blog">
 			{posts.map((post) => (
-				<div className={inter.className} key={post.slug}>
-					<h2 className={firaMono.className}>{post.metadata.title}</h2>
-					<p>
-						{post.metadata.date.toDateString()}{' '}
-						<code>{post.metadata.category}</code>
-					</p>
-					<div>{post.preview}</div>
-					<Link href={`/blog/${post.slug}`}>Read</Link>
+				<div className={`${inter.className} ${styles.post}`} key={post.slug}>
+					<Link href={`/blog/${post.slug}`} className={styles.invincibleAnchor}>
+						<h2 className={firaMono.className}>{post.metadata.title}</h2>
+						<p>
+							{post.metadata.date.toDateString()}{' '}
+							<code>{post.metadata.category}</code>
+						</p>
+					</Link>
+					<div className={styles.preview}>
+						{post.preview}
+
+						<div className={styles.readMore}>
+							<Link
+								href={`/blog/${post.slug}`}
+								className={styles.invincibleAnchor}
+							>
+								<span>Read More</span>
+							</Link>
+						</div>
+					</div>
 				</div>
 			))}
 		</SubPage>
