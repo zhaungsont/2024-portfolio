@@ -3,7 +3,6 @@ import { Inter, Fira_Mono } from 'next/font/google';
 import './globals.scss';
 import Link from 'next/link';
 import styles from './page.module.scss';
-import { FiExternalLink } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import ThemeToggleButton from '@/app/components/ThemeToggleButton/ThemeToggleButton.client';
 import ExternalLink from '@/app/components/ExternalLink/ExternalLink';
@@ -17,10 +16,6 @@ export const metadata: Metadata = {
 	title: 'Michael Chuang',
 	description: "Michael Chuang's personal website",
 	keywords: ['personal website', 'portfolio', 'software engineer'],
-};
-
-const toggleTheme = () => {
-	document.body.classList.toggle('light-theme');
 };
 
 export default function RootLayout({
