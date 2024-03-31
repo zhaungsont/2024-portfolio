@@ -30,11 +30,12 @@
 	}
 
 	.title {
-		color: var(--text-color);
+		-webkit-text-stroke: 1px var(--text-color);
+		color: transparent;
 		margin-top: 2rem;
 		font-size: 2rem;
 		margin-bottom: 3rem;
-		filter: opacity(0.8);
+		filter: opacity(0.75);
 	}
 }
 
