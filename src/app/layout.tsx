@@ -35,10 +35,18 @@ export default function RootLayout({
 						<h3>Software Engineer</h3>
 						<h3>Taipei, Taiwan</h3>
 						<div className={styles.links}>
-							<a target="_blank" href="https://github.com/zhaungsont">
+							<a
+								target="_blank"
+								href="https://github.com/zhaungsont"
+								rel="noopener noreferrer"
+							>
 								<FaGithub />
 							</a>
-							<a target="_blank" href="https://www.linkedin.com/in/zhsont/">
+							<a
+								target="_blank"
+								href="https://www.linkedin.com/in/zhsont/"
+								rel="noopener noreferrer"
+							>
 								<FaLinkedin />
 							</a>
 						</div>
