@@ -84,6 +84,25 @@ export default async function page() {
 
   return (
     <SubPage title="Blog">
+      {/* <div className={`${inter.className} ${styles.post}`}>
+        <Link href="/blog" className={styles.invincibleAnchor}>
+          <h2 className={firaMono.className}>Welcome to my blog!</h2>
+          <p>
+            2024-01-01 <code>CAT</code>
+          </p>
+        </Link>
+        <div className={styles.preview}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quis
+          nostrum dolore repellat, vitae enim error labore alias possimus
+          numquam dolores quasi deleniti impedit, repudiandae placeat illo
+          voluptates voluptatibus architecto!
+          <div className={styles.readMore}>
+            <Link href="/blog" className={styles.invincibleAnchor}>
+              <span>Read More</span>
+            </Link>
+          </div>
+        </div>
+      </div> */}
       {posts.map((post) => (
         <div className={`${inter.className} ${styles.post}`} key={post.slug}>
           <Link href={`/blog/${post.slug}`} className={styles.invincibleAnchor}>
