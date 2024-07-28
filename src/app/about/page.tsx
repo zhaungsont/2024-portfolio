@@ -13,9 +13,10 @@ export default function About() {
         <p className={styles.bio}>
           <strong>Michael Chuang</strong> is a dedicated software engineer based
           in Taipei, Taiwan, with a keen focus on technical excellence and best
-          practices. With a solid foundation in both large and small
-          organizations, he brings two years of valuable experience to the
-          table.
+          practices. Fluent in both Mandarin Chinese and English, he seamlessly
+          navigates and contributes to global tech communities. With a solid
+          foundation in both large and small organizations, he brings two years
+          of valuable experience to the table.
         </p>
         <p className={styles.bio}>
           Michael&apos;s journey into the world of technology began at the age
@@ -50,11 +51,11 @@ export default function About() {
           </ExternalLink>
           <br />
           <br />
-          ...or add him on{' '}
+          {/* ...or add him on{' '}
           <ExternalLink href="https://github.com/zhaungsont/hide-teams-overlay">
             Discord
           </ExternalLink>
-          <br />
+          <br /> */}
         </div>
         <p className={styles.bio}>
           For business inquiries, please reach out to Michael at{' '}
