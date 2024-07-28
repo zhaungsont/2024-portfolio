@@ -60,10 +60,19 @@ export default function RootLayout({
           </div>
           <div className={`${firaMono.className} ${styles.pageLinks}`}>
             <Link href="/about">about</Link>
-            <Link href="/experience">Experience</Link>
-            <Link href="/resume">Resume</Link>
-            <Link href="/blog">Blog</Link>
-            <ExternalLink href="https://blog.zhsont.cc/">Blog</ExternalLink>
+            <Link href="/experience" className="under-construction">
+              Experience
+            </Link>
+            <Link href="/resume" className="under-construction">
+              Resume
+            </Link>
+            {/* <Link href="/blog">Blog</Link> */}
+            <ExternalLink
+              href="https://blog.zhsont.cc/"
+              className="under-construction"
+            >
+              Blog
+            </ExternalLink>
           </div>
         </main>
       </body>
